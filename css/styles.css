@@ -3,10 +3,11 @@
 :root {
   --primary-color: #ffa07a;
   --secondary-color: #708090;
-  --dark-color: #b0c4de;
+  --dark-color: #333;
   --nude-color: #fff0f5;
   --success-color: #5cb85c;
   --error-color: #d9534f;
+  --white: #fff;
 }
 
 * {
@@ -17,7 +18,6 @@
 
 body {
   font-family: "Oswald", sans-serif;
-  color: #333;
   line-height: 1.6;
 }
 
@@ -27,7 +27,6 @@ ul {
 
 a {
   text-decoration: none;
-  color: #333;
 }
 
 h1,
@@ -47,7 +46,7 @@ img {
 
 code,
 pre {
-  color: #fff;
+  color: var(--white);
   padding: 10px;
   background: #333;
 }
@@ -68,13 +67,13 @@ pre {
 }
 
 .navbar a {
-  color: #fff;
+  color: var(--white);
   padding: 10px;
   margin: 0 5px;
 }
 
 .navbar a:hover {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid var(--white);
 }
 
 .navbar .flex {
@@ -85,7 +84,7 @@ pre {
 .showcase {
   height: 400;
   background-color: var(--primary-color);
-  color: #fff;
+  color: var(--white);
   position: relative;
 }
 
@@ -99,8 +98,8 @@ pre {
 
 .showcase .grid {
   overflow: visible;
-  grid-template-columns: 55% 45%;
-  grid-gap: 30px;
+  grid-template-columns: 54% 44%;
+  grid-gap: 2%;
 }
 
 .showcase-text {
@@ -143,14 +142,14 @@ pre {
   bottom: -70px;
   right: 0;
   left: 0;
-  background: #fff;
+  background: var(--white);
   transform: skewY(-3deg);
   -webkit-transform: skewY(-3deg);
   -moz-transform: skewY(-3deg);
   -ms-transform: skewY(-3deg);
 }
 
-/* Showcase */
+/* Stats */
 .stats {
   padding-top: 100px;
   animation: slideInFromBottom 1s ease-in;
@@ -207,9 +206,28 @@ pre {
 }
 
 /* Features */
+.features-head {
+  position: relative;
+}
+
 .features-head img {
   width: 200px;
   justify-self: flex-end;
+}
+
+.features-head::before,
+.features::after {
+  content: "";
+  position: absolute;
+  height: 80px;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  background: var(--white);
+  transform: skewY(-3deg);
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
 }
 
 .features-sub-head img {
@@ -259,9 +277,33 @@ pre {
   font-weight: bold;
 }
 
+.docs-head {
+  position: relative;
+}
+
+.docs-head::before,
+.docs-head::after {
+  content: "";
+  position: absolute;
+  height: 100px;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  background: var(--white);
+  transform: skewY(-3deg);
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
+}
+
+.docs-main .card {
+  z-index: 3;
+}
+
 /* Footer */
-.footer .social a {
+footer a {
   margin: 0 10px;
+  color: var(--white);
 }
 
 /* Animations */
@@ -353,7 +395,7 @@ pre {
 }
 
 /* Mobile */
-@media (max-width: 500px) {
+@media (max-width: 512px) {
   .navbar {
     height: 130px;
   }
